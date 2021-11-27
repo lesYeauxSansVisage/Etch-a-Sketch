@@ -1,6 +1,13 @@
 const container = document.getElementById("container");
+const clearBtn = document.getElementById("clear");
 
 const colors = ["#111", "#222", "#333", "#444", "#555"];
+
+// Create a function and an event listener that create the boxes
+//
+// Change the background color according to the selected color
+
+let boxSize = 0;
 
 createBoxes(100);
 
@@ -23,5 +30,15 @@ container.addEventListener("mouseover", (e) => {
   ) {
     e.target.style.backgroundColor = getRandomColor();
     e.target.classList.add("hovered");
+  }
+});
+
+clearBtn.addEventListener("click", () => {
+  const boxes = document.querySelectorAll(".box");
+  if (boxes) {
+    boxes.forEach((box) => {
+      box.classList.remove("hovered");
+      box.style.backgroundColor = "#FFF";
+    });
   }
 });

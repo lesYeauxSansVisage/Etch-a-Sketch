@@ -1,5 +1,7 @@
 const container = document.getElementById("container");
 const clearBtn = document.getElementById("clear");
+const decreaseBtn = document.getElementById("decrease-size");
+const increaseBtn = document.getElementById("increase-size");
 
 const colors = ["#111", "#222", "#333", "#444", "#555"];
 
@@ -7,21 +9,9 @@ const colors = ["#111", "#222", "#333", "#444", "#555"];
 //
 // Change the background color according to the selected color
 
-let boxSize = 0;
+let boxGridSize = 10;
 
 createBoxes(100);
-
-function createBoxes(boxNumber) {
-  for (let i = 0; i < boxNumber; i++) {
-    const box = document.createElement("div");
-    box.classList.add("box");
-    container.append(box);
-  }
-}
-
-function getRandomColor() {
-  return colors[Math.floor(Math.random() * colors.length)];
-}
 
 container.addEventListener("mouseover", (e) => {
   if (
@@ -35,10 +25,38 @@ container.addEventListener("mouseover", (e) => {
 
 clearBtn.addEventListener("click", () => {
   const boxes = document.querySelectorAll(".box");
-  if (boxes) {
-    boxes.forEach((box) => {
-      box.classList.remove("hovered");
-      box.style.backgroundColor = "#FFF";
-    });
+  boxes.forEach((box) => {
+    box.classList.remove("hovered");
+    box.style.backgroundColor = "#FFF";
+  });
+});
+
+increaseBtn.addEventListener("click", () => {
+  if (boxGridSize >= 2) {
+    boxGridSize -= 1;
+    container.innerHTML = "";
+    createBoxes(boxGridSize ** 2);
+    container.style.gridTemplateColumns = `repeat(${boxGridSize}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${boxGridSize}, 1fr)`;
   }
 });
+
+decreaseBtn.addEventListener("click", () => {
+  boxGridSize += 1;
+  container.innerHTML = "";
+  createBoxes(boxGridSize ** 2);
+  container.style.gridTemplateColumns = `repeat(${boxGridSize}, 1fr)`;
+  container.style.gridTemplateRows = `repeat(${boxGridSize}, 1fr)`;
+});
+
+function createBoxes(boxNumber) {
+  for (let i = 0; i < boxNumber; i++) {
+    const box = document.createElement("div");
+    box.classList.add("box");
+    container.append(box);
+  }
+}
+
+function getRandomColor() {
+  return colors[Math.floor(Math.random() * colors.length)];
+}

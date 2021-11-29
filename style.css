@@ -37,17 +37,17 @@ h1 {
 .container {
   height: 500px;
   width: 500px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
   box-shadow: 0 0 30px #fff;
 }
 
+
+
 .box {
   background-color: #fff;
-  height: 50px;
-  width: 50px;
   transition: background 0.2s ease-in;
-  border: 0.5px black solid;
 }
 
 .hovered {
@@ -65,17 +65,18 @@ button {
   outline: none;
   border: none;
   border-radius: 50%;
-  width: 70px;
-  height: 70px;
+  width: 4rem;
+  height: 4rem;
   font-family: inherit;
+  color: var(--text-color);
+  font-size: 2rem;
   box-shadow: 0 0 10px white;
   cursor: pointer;
-  color: var(--text-color);
-  font-size: 1rem;
   transition: 0.3s all ease-in;
 }
 
 button:hover {
   color: var(--main-color);
   background-color: var(--text-color);
+  transform: scale(1.2);
 }

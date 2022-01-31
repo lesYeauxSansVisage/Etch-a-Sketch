@@ -75,4 +75,12 @@ button:hover {
   transform: scale(1.2);
 }
 
-.hovered {}
+.hovered {
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 300px;
+    height: 300px;
+  }
+} ;

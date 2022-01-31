@@ -23,6 +23,17 @@ container.addEventListener("mouseover", (e) => {
   }
 });
 
+container.addEventListener("click", (e) => {
+  const target = e.target as HTMLDivElement;
+  if (
+    target.classList.contains("box") &&
+    !target.classList.contains("hovered")
+  ) {
+    target.style.backgroundColor = getRandomColor();
+    target.classList.add("hovered");
+  }
+});
+
 clearBtn.addEventListener("click", () => {
   const boxes = document.querySelectorAll(".box");
   boxes.forEach((box) => {

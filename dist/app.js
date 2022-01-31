@@ -12,6 +12,14 @@ container.addEventListener("mouseover", (e) => {
         target.classList.add("hovered");
     }
 });
+container.addEventListener("click", (e) => {
+    const target = e.target;
+    if (target.classList.contains("box") &&
+        !target.classList.contains("hovered")) {
+        target.style.backgroundColor = getRandomColor();
+        target.classList.add("hovered");
+    }
+});
 clearBtn.addEventListener("click", () => {
     const boxes = document.querySelectorAll(".box");
     boxes.forEach((box) => {

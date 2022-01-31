@@ -31,7 +31,6 @@ body {
 h1 {
   font-size: 3rem;
   color: var(--text-color);
-  text-shadow: 0 0 10px var(--text-color);
 }
 
 .container {
@@ -43,14 +42,9 @@ h1 {
   box-shadow: 0 0 30px #fff;
 }
 
-
-
 .box {
   background-color: #fff;
   transition: background 0.2s ease-in;
-}
-
-.hovered {
 }
 
 .buttons-container {

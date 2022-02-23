@@ -8,4 +8,10 @@
 - Changing CSS classes with JavaScript
 - TypeScript
 
+
+
   ![Tux, the Linux mascot](/src/assets/screely-1645624936218.png)
+
+
+
+  ### Live page: https://lesyeauxsansvisage.github.io/Etch-a-Sketch/

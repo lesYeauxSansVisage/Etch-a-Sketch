@@ -1,0 +1,11 @@
+# Etch-a-Sketch
+
+## A simple App to make some drawings.
+
+### This project covers some basic concepts in Web Development:
+
+- DOM Manipulation
+- Changing CSS classes with JavaScript
+- TypeScript
+
+  ![Tux, the Linux mascot](/src/assets/screely-1645624936218.png)

@@ -10,7 +10,7 @@
 
 
 
-  ![Tux, the Linux mascot](/src/assets/screely-1645624936218.png)
+  ![Etch a Sketch screenshot](/src/assets/screely-1645624936218.png)
 
 
 
